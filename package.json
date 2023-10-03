@@ -1,0 +1,29 @@
+{
+  "name": "create-wc-extension",
+  "version": "0.1.2",
+  "description": "Create a plugin for WooCommerce admin customizations.",
+  "main": "./index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeycanDeveloper/create-wc-extension.git"
+  },
+  "keywords": [
+    "WooCommerce",
+    "Admin",
+    "Extension"
+  ],
+  "author": "Halil Beycan, BeycanPress",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BeycanDeveloper/create-wc-extension/issues"
+  },
+  "homepage": "https://github.com/BeycanDeveloper/create-wc-extension#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fs-extra": "^9.0.1"
+  }
+}
