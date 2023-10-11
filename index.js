@@ -8,7 +8,6 @@ const files = [
 	'._gitignore',
 	'_README.md',
 	'_webpack.config.js',
-	'_main.php',
 	'_package.json',
 	'._eslintrc.js',
 	'._prettierrc.json',
@@ -24,8 +23,11 @@ const maybeThrowError = ( error ) => {
 			'🎉 Welcome to WooCommerce Admin Extension Starter Pack 🎉'
 		)
 	);
-	console.log( '\n' );
 	const extensionName = process.argv[2];
+	const extensionType = process.argv[3] || 'plugin';
+	const extensionFile = extensionType === 'plugin' ? '_main-plugin.php' : '_main-theme.php';
+	
+	files.push( extensionFile );
 
     if (!extensionName) {
         console.log(
@@ -45,7 +47,7 @@ const maybeThrowError = ( error ) => {
 		const from = path.join( __dirname, 'skeleton' ,file );
 		const to = path.join(
 			folder,
-			'_main.php' === file
+			extensionFile === file
 				? `${ extensionSlug }.php`
 				: file.replace( '_', '' )
 		);
@@ -85,7 +87,7 @@ const maybeThrowError = ( error ) => {
 		)
 	);
 	process.stdout.write( '\n' );
-	console.log( 'pnpm install' );
-	console.log( 'pnpm start' );
+	console.log( 'npm install' );
+	console.log( 'npm start' );
 	process.stdout.write( '\n' );
 } )();
